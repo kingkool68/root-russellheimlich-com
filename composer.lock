@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "e595bee1f6fc4ea381a335be657c0897",
-    "content-hash": "4492dc231e7f6f8aeb773451b1cd3d02",
+    "hash": "13750573a627c12f0654d105263cee3c",
+    "content-hash": "ff16d7db45b7cdaa9385a2a023fe0a5b",
     "packages": [
         {
             "name": "afragen/github-updater",
@@ -279,7 +279,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/akismet.3.2.zip",
-                "reference": "tags/3.2",
+                "reference": null,
                 "shasum": null
             },
             "require": {
@@ -299,7 +299,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/better-http-redirects.1.3.zip",
-                "reference": "tags/1.3",
+                "reference": null,
                 "shasum": null
             },
             "require": {
@@ -319,7 +319,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/compressed-emoji.1.0.zip",
-                "reference": "tags/1.0",
+                "reference": null,
                 "shasum": null
             },
             "require": {
@@ -339,7 +339,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/debug-bar.0.8.4.zip",
-                "reference": "tags/0.8.4",
+                "reference": null,
                 "shasum": null
             },
             "require": {
@@ -359,7 +359,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/debug-bar-actions-and-filters-addon.1.5.2.zip",
-                "reference": "tags/1.5.2",
+                "reference": null,
                 "shasum": null
             },
             "require": {
@@ -379,7 +379,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/debug-bar-query-count-alert.0.1.zip",
-                "reference": "tags/0.1",
+                "reference": null,
                 "shasum": null
             },
             "require": {
@@ -390,15 +390,15 @@
         },
         {
             "name": "wpackagist-plugin/debug-bar-remote-requests",
-            "version": "0.1.2",
+            "version": "trunk",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/debug-bar-remote-requests/",
-                "reference": "tags/0.1.2"
+                "reference": "trunk"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/debug-bar-remote-requests.0.1.2.zip",
+                "url": "https://downloads.wordpress.org/plugin/debug-bar-remote-requests.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -419,7 +419,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/debug-bar-slow-actions.0.8.3.zip",
-                "reference": "tags/0.8.3",
+                "reference": null,
                 "shasum": null
             },
             "require": {
@@ -439,7 +439,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/debug-wp-redirect.zip",
-                "reference": "trunk",
+                "reference": null,
                 "shasum": null
             },
             "require": {
@@ -459,7 +459,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/ewww-image-optimizer.3.2.2.zip",
-                "reference": "tags/3.2.2",
+                "reference": null,
                 "shasum": null
             },
             "require": {
@@ -479,7 +479,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/google-analytics-for-wordpress.5.5.4.zip",
-                "reference": "tags/5.5.4",
+                "reference": null,
                 "shasum": null
             },
             "require": {
@@ -499,7 +499,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/nginx-helper.1.9.9.zip",
-                "reference": "tags/1.9.9",
+                "reference": null,
                 "shasum": null
             },
             "require": {
@@ -519,7 +519,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/permalinks-moved-permanently.zip",
-                "reference": "trunk",
+                "reference": null,
                 "shasum": null
             },
             "require": {
@@ -539,7 +539,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/proper-pagination.zip",
-                "reference": "trunk",
+                "reference": null,
                 "shasum": null
             },
             "require": {
@@ -559,7 +559,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/query-monitor.2.13.2.zip",
-                "reference": "tags/2.13.2",
+                "reference": null,
                 "shasum": null
             },
             "require": {
@@ -579,7 +579,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/regenerate-thumbnails.2.2.6.zip",
-                "reference": "tags/2.2.6",
+                "reference": null,
                 "shasum": null
             },
             "require": {
@@ -599,7 +599,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/search-regex.1.4.16.zip",
-                "reference": "tags/1.4.16",
+                "reference": null,
                 "shasum": null
             },
             "require": {
@@ -619,7 +619,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/wordpress-seo.4.0.2.zip",
-                "reference": "tags/4.0.2",
+                "reference": null,
                 "shasum": null
             },
             "require": {
@@ -639,7 +639,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/wp-crontrol.1.4.zip",
-                "reference": "tags/1.4",
+                "reference": null,
                 "shasum": null
             },
             "require": {
@@ -659,7 +659,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/wp-redis.0.6.0.zip",
-                "reference": "tags/0.6.0",
+                "reference": null,
                 "shasum": null
             },
             "require": {
@@ -673,7 +673,13 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "humanmade/mercator": 20
+        "humanmade/mercator": 20,
+        "kingkool68/cache-busting-path": 20,
+        "kingkool68/cdn-integration": 20,
+        "kingkool68/twitter-backerupper": 20,
+        "kingkool68/rk-wedding-theme": 20,
+        "kingkool68/tweet-tweeeeeeeeeet": 20,
+        "kingkool68/zadieheimlich": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
