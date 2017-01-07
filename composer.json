@@ -1,0 +1,138 @@
+{
+    "name": "kingkool68/root.russellheimlich.com",
+    "license": "GPLv3",
+    "type": "project",
+    "authors": [{
+        "name": "Russell Heimlich",
+        "email": "kingkool68@gmail.com"
+    }],
+    "repositories": [{
+            "type": "composer",
+            "url": "https://wpackagist.org"
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "humanmade/aws-ses-wp-mail",
+                "type": "wordpress-plugin",
+                "version": "0.0.1",
+                "source": {
+                    "url": "https://github.com/humanmade/aws-ses-wp-mail",
+                    "type": "git",
+                    "reference": "master"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "kingkool68/cache-busting-path",
+                "type": "wordpress-plugin",
+                "version": "0.0.1",
+                "source": {
+                    "url": "https://github.com/kingkool68/wordpress-cache-busting-path",
+                    "type": "git",
+                    "reference": "master"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "kingkool68/cdn-integration",
+                "type": "wordpress-plugin",
+                "version": "0.0.1",
+                "source": {
+                    "url": "https://github.com/kingkool68/wordpress-cdn-integration",
+                    "type": "git",
+                    "reference": "master"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "kingkool68/twitter-backerupper",
+                "type": "wordpress-plugin",
+                "version": "0.0.1",
+                "source": {
+                    "url": "https://github.com/kingkool68/wordpress-twitter-backerupper",
+                    "type": "git",
+                    "reference": "master"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "kingkool68/rk-wedding-theme",
+                "type": "wordpress-theme",
+                "version": "0.0.1",
+                "source": {
+                    "url": "https://github.com/kingkool68/rk-wedding-theme",
+                    "type": "git",
+                    "reference": "master"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "kingkool68/tweet-tweeeeeeeeeet",
+                "type": "wordpress-theme",
+                "version": "0.0.1",
+                "source": {
+                    "url": "https://github.com/kingkool68/wordpress-tweet-tweeeeeeeeeet",
+                    "type": "git",
+                    "reference": "master"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "kingkool68/zadieheimlich",
+                "type": "wordpress-theme",
+                "version": "0.0.1",
+                "source": {
+                    "url": "https://github.com/kingkool68/zadieheimlich",
+                    "type": "git",
+                    "reference": "master"
+                }
+            }
+        }
+    ],
+    "require": {
+        "afragen/github-updater": "*",
+        "humanmade/aws-ses-wp-mail": "*",
+        "humanmade/mercator": "dev-master",
+        "kingkool68/cache-busting-path": "*",
+        "kingkool68/cdn-integration": "*",
+        "kingkool68/twitter-backerupper": "*",
+
+        "kingkool68/rk-wedding-theme": "*",
+        "kingkool68/tweet-tweeeeeeeeeet": "*",
+        "kingkool68/zadieheimlich": "*",
+
+        "wpackagist-plugin/akismet": "*",
+        "wpackagist-plugin/better-http-redirects": "*",
+        "wpackagist-plugin/compressed-emoji": "*",
+        "wpackagist-plugin/debug-bar": "*",
+        "wpackagist-plugin/debug-bar-actions-and-filters-addon": "*",
+        "wpackagist-plugin/debug-bar-query-count-alert": "*",
+        "wpackagist-plugin/debug-bar-remote-requests": "*",
+        "wpackagist-plugin/debug-bar-slow-actions": "*",
+        "wpackagist-plugin/debug-wp-redirect": "*",
+        "wpackagist-plugin/ewww-image-optimizer": "*",
+        "wpackagist-plugin/google-analytics-for-wordpress": "*",
+        "wpackagist-plugin/nginx-helper": "*",
+        "wpackagist-plugin/permalinks-moved-permanently": "*",
+        "wpackagist-plugin/proper-pagination": "*",
+        "wpackagist-plugin/query-monitor": "*",
+        "wpackagist-plugin/regenerate-thumbnails": "*",
+        "wpackagist-plugin/search-regex": "*",
+        "wpackagist-plugin/wp-crontrol": "*",
+        "wpackagist-plugin/wp-redis": "*",
+        "wpackagist-plugin/wordpress-seo": "*"
+    }
+}
