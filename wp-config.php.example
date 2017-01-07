@@ -1,0 +1,46 @@
+<?php
+/**
+ * These are some of the things I like to put in wp-config.php for root.russellheimlich.com
+ */
+
+// Allow turning on debugging and error messages for certain requests
+if ( isset( $_GET['debug'] ) && $_GET['debug'] === 'secret' ) {
+    define( 'WP_DEBUG', true );
+} else {
+    define( 'WP_DEBUG', false );
+}
+// If WP_DEBUG is true then enable other fun goodies
+if( WP_DEBUG ) {
+  define( 'WP_DEBUG_LOG', true );
+  define( 'SAVEQUERIES', true );
+}
+
+// Script debugging
+if ( isset( $_GET['script-debug'] ) ) {
+    // Causes WordPress scripts to be included separately
+    define( 'CONCATENATE_SCRIPTS', false );
+    // Uses unminified scripts
+    define( 'SCRIPT_DEBUG', true );
+}
+
+// We'll use a real serverside cron job instead
+// See http://wordpress.stackexchange.com/a/239257/2744
+define( 'DISABLE_WP_CRON', true );
+
+// We need to enable sunrise.php for the Mercator plugin
+define( 'SUNRISE', true );
+
+// Required by wp-redis plugin for object caching
+$redis_server = array(
+    'host' => '127.0.0.1',
+    'port' => 6379,
+);
+
+// Amazon SES Keys
+define( 'AWS_SES_WP_MAIL_REGION', '***' );
+define( 'AWS_SES_WP_MAIL_KEY', '***' );
+define( 'AWS_SES_WP_MAIL_SECRET', '***' );
+
+// Amazon S3 Credentials for the AWS plugin
+define( 'DBI_AWS_ACCESS_KEY_ID', '***' );
+define( 'DBI_AWS_SECRET_ACCESS_KEY', '***' );
