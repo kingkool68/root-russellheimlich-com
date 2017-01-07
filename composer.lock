@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "13750573a627c12f0654d105263cee3c",
-    "content-hash": "ff16d7db45b7cdaa9385a2a023fe0a5b",
+    "hash": "213190e63e25c74ba2e5efc97de07cf3",
+    "content-hash": "86032b2f573526624960d1bde3fb6f1e",
     "packages": [
         {
             "name": "afragen/github-updater",
@@ -390,15 +390,15 @@
         },
         {
             "name": "wpackagist-plugin/debug-bar-remote-requests",
-            "version": "trunk",
+            "version": "0.1.2",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/debug-bar-remote-requests/",
-                "reference": "trunk"
+                "reference": "tags/0.1.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/debug-bar-remote-requests.zip",
+                "url": "https://downloads.wordpress.org/plugin/debug-bar-remote-requests.0.1.2.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -673,13 +673,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "humanmade/mercator": 20,
-        "kingkool68/cache-busting-path": 20,
-        "kingkool68/cdn-integration": 20,
-        "kingkool68/twitter-backerupper": 20,
-        "kingkool68/rk-wedding-theme": 20,
-        "kingkool68/tweet-tweeeeeeeeeet": 20,
-        "kingkool68/zadieheimlich": 20
+        "humanmade/mercator": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
