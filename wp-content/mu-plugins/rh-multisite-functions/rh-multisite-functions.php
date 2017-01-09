@@ -93,3 +93,34 @@ function rh_wp_mail_from_name() {
 	return 'WordPress (' . $parts['host'] . ')';
 }
 add_filter( 'wp_mail_from_name', 'rh_wp_mail_from_name' );
+
+function rh_replace_with_cdn_url( $url = '' ) {
+	if ( ! defined( 'RH_CDN_URL' ) || empty( RH_CDN_URL ) ) {
+		return $url;
+	}
+	$cdn_url = untrailingslashit( RH_CDN_URL );
+	$site_url = get_site_url();
+	$url = str_ireplace( $site_url, $cdn_url, $url );
+	return $url;
+}
+
+$filters = array(
+	'stylesheet_uri',
+	'stylesheet_directory_uri',
+	'template_directory_uri',
+	'script_loader_src',
+	'style_loader_src',
+	'includes_url',
+	'plugins_url',
+	'theme_root_uri',
+	'wp_get_attachment_url',
+);
+foreach ( $filters as $filter ) {
+	add_filter( $filter, 'rh_replace_with_cdn_url', 10, 1 );
+}
+
+function rh_filter_upload_dir( $data = array() ) {
+	$data['baseurl'] = rh_replace_with_cdn_url($data['baseurl']);
+	return $data;
+}
+add_filter( 'upload_dir', 'rh_filter_upload_dir' );
