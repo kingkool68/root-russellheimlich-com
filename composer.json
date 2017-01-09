@@ -15,7 +15,7 @@
             "package": {
                 "name": "humanmade/aws-ses-wp-mail",
                 "type": "wordpress-plugin",
-                "version": "0.0.1",
+                "version": "dev-master",
                 "source": {
                     "url": "https://github.com/humanmade/aws-ses-wp-mail",
                     "type": "git",
@@ -28,7 +28,7 @@
             "package": {
                 "name": "kingkool68/cache-busting-path",
                 "type": "wordpress-plugin",
-                "version": "master",
+                "version": "dev-master",
                 "source": {
                     "url": "https://github.com/kingkool68/wordpress-cache-busting-path",
                     "type": "git",
@@ -41,7 +41,7 @@
             "package": {
                 "name": "kingkool68/cdn-integration",
                 "type": "wordpress-plugin",
-                "version": "master",
+                "version": "dev-master",
                 "source": {
                     "url": "https://github.com/kingkool68/wordpress-cdn-integration",
                     "type": "git",
@@ -54,7 +54,7 @@
             "package": {
                 "name": "kingkool68/twitter-backerupper",
                 "type": "wordpress-plugin",
-                "version": "master",
+                "version": "dev-master",
                 "source": {
                     "url": "https://github.com/kingkool68/wordpress-twitter-backerupper",
                     "type": "git",
@@ -67,7 +67,7 @@
             "package": {
                 "name": "kingkool68/rk-wedding-theme",
                 "type": "wordpress-theme",
-                "version": "master",
+                "version": "dev-master",
                 "source": {
                     "url": "https://github.com/kingkool68/rk-wedding-theme",
                     "type": "git",
@@ -80,7 +80,7 @@
             "package": {
                 "name": "kingkool68/tweet-tweeeeeeeeeet",
                 "type": "wordpress-theme",
-                "version": "master",
+                "version": "dev-master",
                 "source": {
                     "url": "https://github.com/kingkool68/wordpress-tweet-tweeeeeeeeeet",
                     "type": "git",
@@ -93,7 +93,7 @@
             "package": {
                 "name": "kingkool68/zadieheimlich",
                 "type": "wordpress-theme",
-                "version": "master",
+                "version": "dev-master",
                 "source": {
                     "url": "https://github.com/kingkool68/zadieheimlich",
                     "type": "git",
@@ -104,15 +104,15 @@
     ],
     "require": {
         "afragen/github-updater": "*",
-        "humanmade/aws-ses-wp-mail": "*",
+        "humanmade/aws-ses-wp-mail": "dev-master",
         "humanmade/mercator": "dev-master",
-        "kingkool68/cache-busting-path": "*",
-        "kingkool68/cdn-integration": "*",
-        "kingkool68/twitter-backerupper": "*",
+        "kingkool68/cache-busting-path": "dev-master",
+        "kingkool68/cdn-integration": "dev-master",
+        "kingkool68/twitter-backerupper": "dev-master",
 
-        "kingkool68/rk-wedding-theme": "*",
-        "kingkool68/tweet-tweeeeeeeeeet": "*",
-        "kingkool68/zadieheimlich": "*",
+        "kingkool68/rk-wedding-theme": "dev-master",
+        "kingkool68/tweet-tweeeeeeeeeet": "dev-master",
+        "kingkool68/zadieheimlich": "dev-master",
 
         "wpackagist-plugin/akismet": "*",
         "wpackagist-plugin/better-http-redirects": "*",
