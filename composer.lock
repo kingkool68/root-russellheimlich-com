@@ -4,8 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "213190e63e25c74ba2e5efc97de07cf3",
-    "content-hash": "86032b2f573526624960d1bde3fb6f1e",
+    "content-hash": "b772db51468a7187a8d4bce8f6435e33",
     "packages": [
         {
             "name": "afragen/github-updater",
@@ -53,7 +52,7 @@
                 "updater",
                 "wordpress"
             ],
-            "time": "2016-11-29 18:28:20"
+            "time": "2016-11-29T18:28:20+00:00"
         },
         {
             "name": "composer/installers",
@@ -160,17 +159,18 @@
                 "zend",
                 "zikula"
             ],
-            "time": "2016-08-13 20:53:52"
+            "time": "2016-08-13T20:53:52+00:00"
         },
         {
             "name": "humanmade/aws-ses-wp-mail",
-            "version": "0.0.1",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/humanmade/aws-ses-wp-mail",
                 "reference": "master"
             },
-            "type": "wordpress-plugin"
+            "type": "wordpress-plugin",
+            "time": "2016-11-22 06:25:55"
         },
         {
             "name": "humanmade/mercator",
@@ -210,63 +210,69 @@
         },
         {
             "name": "kingkool68/cache-busting-path",
-            "version": "0.0.1",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kingkool68/wordpress-cache-busting-path",
                 "reference": "master"
             },
-            "type": "wordpress-plugin"
+            "type": "wordpress-plugin",
+            "time": "2016-03-26 16:06:22"
         },
         {
             "name": "kingkool68/cdn-integration",
-            "version": "0.0.1",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kingkool68/wordpress-cdn-integration",
                 "reference": "master"
             },
-            "type": "wordpress-plugin"
+            "type": "wordpress-plugin",
+            "time": "2016-08-01 04:52:42"
         },
         {
             "name": "kingkool68/rk-wedding-theme",
-            "version": "0.0.1",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kingkool68/rk-wedding-theme",
                 "reference": "master"
             },
-            "type": "wordpress-theme"
+            "type": "wordpress-theme",
+            "time": "2017-01-09 03:19:32"
         },
         {
             "name": "kingkool68/tweet-tweeeeeeeeeet",
-            "version": "0.0.1",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kingkool68/wordpress-tweet-tweeeeeeeeeet",
                 "reference": "master"
             },
-            "type": "wordpress-theme"
+            "type": "wordpress-theme",
+            "time": "2016-12-21 03:36:22"
         },
         {
             "name": "kingkool68/twitter-backerupper",
-            "version": "0.0.1",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kingkool68/wordpress-twitter-backerupper",
                 "reference": "master"
             },
-            "type": "wordpress-plugin"
+            "type": "wordpress-plugin",
+            "time": "2016-12-21 04:33:38"
         },
         {
             "name": "kingkool68/zadieheimlich",
-            "version": "0.0.1",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kingkool68/zadieheimlich",
                 "reference": "master"
             },
-            "type": "wordpress-theme"
+            "type": "wordpress-theme",
+            "time": "2017-01-14 06:31:35"
         },
         {
             "name": "wpackagist-plugin/akismet",
@@ -390,15 +396,15 @@
         },
         {
             "name": "wpackagist-plugin/debug-bar-remote-requests",
-            "version": "0.1.2",
+            "version": "trunk",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/debug-bar-remote-requests/",
-                "reference": "tags/0.1.2"
+                "reference": "trunk"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/debug-bar-remote-requests.0.1.2.zip",
+                "url": "https://downloads.wordpress.org/plugin/debug-bar-remote-requests.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -673,7 +679,14 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "humanmade/mercator": 20
+        "humanmade/aws-ses-wp-mail": 20,
+        "humanmade/mercator": 20,
+        "kingkool68/cache-busting-path": 20,
+        "kingkool68/cdn-integration": 20,
+        "kingkool68/twitter-backerupper": 20,
+        "kingkool68/rk-wedding-theme": 20,
+        "kingkool68/tweet-tweeeeeeeeeet": 20,
+        "kingkool68/zadieheimlich": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

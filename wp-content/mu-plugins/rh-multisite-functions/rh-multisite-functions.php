@@ -123,4 +123,4 @@ function rh_filter_upload_dir( $data = array() ) {
 	$data['baseurl'] = rh_replace_with_cdn_url($data['baseurl']);
 	return $data;
 }
-add_filter( 'upload_dir', 'rh_filter_upload_dir' );
+// add_filter( 'upload_dir', 'rh_filter_upload_dir' );
