@@ -114,13 +114,14 @@ $filters = array(
 	'plugins_url',
 	'theme_root_uri',
 	'wp_get_attachment_url',
+	'cache_busting_path_base_url',
 );
 foreach ( $filters as $filter ) {
-	add_filter( $filter, 'rh_replace_with_cdn_url', 100, 1 );
+	add_filter( $filter, 'rh_replace_with_cdn_url', 10, 1 );
 }
 
 function rh_filter_upload_dir( $data = array() ) {
 	$data['baseurl'] = rh_replace_with_cdn_url($data['baseurl']);
 	return $data;
 }
-// add_filter( 'upload_dir', 'rh_filter_upload_dir' );
+add_filter( 'upload_dir', 'rh_filter_upload_dir' );
