@@ -16,6 +16,7 @@
 !.gitignore
 !composer.*
 !README.md
+!phpcs.ruleset.xml
 !wp-config.php.example
 
 !wp-content/
