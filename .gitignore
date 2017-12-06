@@ -18,6 +18,7 @@
 !README.md
 !phpcs.ruleset.xml
 !wp-config.php.example
+!image-proxy.php
 
 !wp-content/
 
