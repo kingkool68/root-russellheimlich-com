@@ -4,7 +4,7 @@
 // ini_set( 'display_errors', 'On' );
 
 // Paths
-define( 'PHOTON_DIR',  dirname(__FILE__) );
+define( 'PHOTON_DIR',  dirname(__FILE__) . '/photon' );
 
 // Setup Photon Configuration
 define( 'PHOTON__ALLOW_QUERY_STRINGS', 1 );
