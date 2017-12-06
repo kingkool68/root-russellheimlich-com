@@ -1,22 +1,13 @@
 <?php
-// Debugging!
-// error_reporting( E_ALL );
-// ini_set( 'display_errors', 'On' );
 
-// Paths
-$parent_dir = realpath( __DIR__ . DIRECTORY_SEPARATOR . '..' );
-$photon_dir = $parent_dir . DIRECTORY_SEPARATOR . 'photon';
-define( 'PHOTON_DIR',  $photon_dir );
-
-// Setup Photon Configuration
 define( 'PHOTON__ALLOW_QUERY_STRINGS', 1 );
 
-require PHOTON_DIR . '/plugin.php';
-if ( file_exists( PHOTON_DIR . '/../config.php' ) ) {
-	require PHOTON_DIR . '/../config.php';
-} else if ( file_exists( PHOTON_DIR . '/config.php' ) ) {
-	require PHOTON_DIR . '/config.php';
-}
+require dirname( __FILE__ ) . '/plugin.php';
+if ( file_exists( dirname( __FILE__ ) . '/../config.php' ) )
+	require dirname( __FILE__ ) . '/../config.php';
+else if ( file_exists( dirname( __FILE__ ) . '/config.php' ) )
+	require dirname( __FILE__ ) . '/config.php';
+
 // Explicit Configuration
 $allowed_functions = apply_filters( 'allowed_functions', array(
 //	'q'           => RESERVED
@@ -59,19 +50,6 @@ $remote_image_max_size = apply_filters( 'remote_image_max_size', 55 * 1024 * 102
  */
 $origin_domain_exceptions = apply_filters( 'origin_domain_exceptions', array() );
 
-// Set an external fallback domain to fetch an image from if it is not found locally
-$external_fallback_domain = apply_filters( 'external_fallback_domain', '' );
-$external_fallback_domain_scheme = 'http';
-$parsed_external_fallback_domain = parse_url( $external_fallback_domain );
-if ( ! empty( $parsed_external_fallback_domain['host'] ) ) {
-	$external_fallback_domain = $parsed_external_fallback_domain['host'];
-}
-if ( ! empty( $parsed_external_fallback_domain['scheme'] ) ) {
-	$external_fallback_domain_scheme = $parsed_external_fallback_domain['scheme'];
-}
-define( 'EXTERNAL_FALLBACK_DOMAIN', $external_fallback_domain );
-define( 'EXTERNAL_FALLBACK_DOMAIN_SCHEME', $external_fallback_domain );
-
 define( 'JPG_MAX_QUALITY', 89 );
 define( 'PNG_MAX_QUALITY', 80 );
 define( 'WEBP_MAX_QUALITY', 80 );
@@ -101,14 +79,9 @@ if ( file_exists( '/usr/local/bin/pngquant' ) && ! defined( 'DISABLE_IMAGE_OPTIM
 else
 	define( 'PNGQUANT', false );
 
-/*
-We don't have a special CDN set-up to handle conditionally serving
-WEBP images to those agents that support it. For now we set CWEBP to false
-
 if ( file_exists( '/usr/local/bin/cwebp' ) && ! defined( 'DISABLE_IMAGE_OPTIMIZATIONS' ) )
 	define( 'CWEBP', '/usr/local/bin/cwebp' );
 else
-*/
 	define( 'CWEBP', false );
 
 if ( file_exists( '/usr/local/bin/jpegoptim' ) && ! defined( 'DISABLE_IMAGE_OPTIMIZATIONS' ) )
@@ -116,16 +89,8 @@ if ( file_exists( '/usr/local/bin/jpegoptim' ) && ! defined( 'DISABLE_IMAGE_OPTI
 else
 	define( 'JPEGOPTIM', false );
 
-require PHOTON_DIR . '/class-image-processor.php';
+require dirname( __FILE__ ) . '/class-image-processor.php';
 
-// Helper Functions
-
-/**
- * Send an error message to the client
- *
- * @param  string $code    HTTP status code of the error message
- * @param  string $message Error message to be displayed
- */
 function httpdie( $code = '404 Not Found', $message = 'Error: 404 Not Found' ) {
 	$numerical_error_code = preg_replace( '/[^\\d]/', '', $code );
 	do_action( 'bump_stats', "http_error-$numerical_error_code" );
@@ -133,15 +98,6 @@ function httpdie( $code = '404 Not Found', $message = 'Error: 404 Not Found' ) {
 	die( $message );
 }
 
-/**
- * Make an HTTP request for an external image to download and process
- *
- * @param  string  $url             URL of the image to fetch
- * @param  integer $timeout         Maximum time the request is allowed to take in seconds
- * @param  integer $connect_timeout Maximum time in seconds that you allow the connection phase to the server to take
- * @param  integer $max_redirs      Maximum number of redirects to follow
- * @return boolean                  Whether fetching the image was sucessful or not
- */
 function fetch_raw_data( $url, $timeout = 10, $connect_timeout = 3, $max_redirs = 3 ) {
 	// reset image data since we redirect recursively
 	$GLOBALS['raw_data'] = '';
@@ -269,40 +225,17 @@ function fetch_raw_data( $url, $timeout = 10, $connect_timeout = 3, $max_redirs 
 	}
 }
 
-function read_raw_data_from_disk( $file_path = '' ) {
-	$parsed = substr( parse_url( $file_path, PHP_URL_PATH ), 1 );
-	if ( ! is_readable( $parsed ) ) {
-		return false;
-	}
-	$fh = fopen( $parsed, 'r' );
-	$data = fread( $fh, filesize( $parsed ) );
-	$GLOBALS['raw_data'] .= $data;
-	$GLOBALS['raw_data_size'] += strlen( $data );
-	fclose( $fh );
-	header( 'X-Photon-Local: true' );
-	return true;
-}
-
-
-// Kick things off!
 $raw_data = '';
 $raw_data_size = 0;
 
-$url = 'scheme://host' . $_SERVER['REQUEST_URI'];
+$url = sprintf( '%s://%s%s',
+	array_key_exists( 'ssl', $_GET ) ? 'https' : 'http',
+	substr( parse_url( 'scheme://host' . $_SERVER['REQUEST_URI'], PHP_URL_PATH ), 1 ), // see https://bugs.php.net/bug.php?id=71112 (and #66813)
+	isset( $_GET['q'] ) ? '?' . $_GET['q'] : ''
+);
 
-if ( ! read_raw_data_from_disk( $url ) && ! empty( EXTERNAL_FALLBACK_DOMAIN ) ) {
-	$url = sprintf( '%s://%s%s',
-		EXTERNAL_FALLBACK_DOMAIN_SCHEME,
-		substr( parse_url( 'scheme://host' . '/' . EXTERNAL_FALLBACK_DOMAIN . '/' . $_SERVER['REQUEST_URI'], PHP_URL_PATH ), 1 ), // see https://bugs.php.net/bug.php?id=71112 (and #66813)
-		isset( $_GET['q'] ) ? '?' . $_GET['q'] : ''
-	);
-	fetch_raw_data( $url );
-	header( 'X-Photon-Remote: true' );
-}
-
-// Looks like we don't have any image data to process
-if ( empty( $raw_data ) ) {
-	httpdie();
+if ( ! fetch_raw_data( $url ) ) {
+	httpdie( '400 Bad Request', 'Sorry, the parameters you provided were not valid' );
 }
 
 foreach ( $disallowed_file_headers as $file_header ) {
